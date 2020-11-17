@@ -10,6 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // BoilerPlate é aquele código que não necessariamente precisamos entender
+        // como ele funciona, mas precisamos saber como utilizá-lo
+        // É aquele código essencial para algo funcionar, e que toda vez
+        // precisamos escrevê-lo e mantê-lo
+        // Geralmente as bibliotecas servem para evitar com que a gente tenha
+        // que ficar escrevendo e mantendo um monte de código boilerplate
+
         // Obtém a instância do ViewModel utilizando o ViewModelProvider, ViewModelProvider.Factory
         // e a própria classe do ViewModel, que no caso é a TextViewModel
         val viewModel =
