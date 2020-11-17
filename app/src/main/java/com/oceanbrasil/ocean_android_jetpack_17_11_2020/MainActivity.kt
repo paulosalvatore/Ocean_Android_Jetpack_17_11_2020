@@ -34,3 +34,50 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+/*
+class Impressora(val tinta: Boolean) {
+
+    fun imprimir() {
+        print("Resultado!")
+    }
+}
+
+object ImpressoraFactory {
+    fun create(tinta: Boolean = true): Impressora {
+        return Impressora(tinta)
+    }
+}
+
+object ProgramaFactory {
+    fun create(): Programa {
+        return Programa()
+    }
+}
+
+class Programa {
+    fun executar(impressora: Impressora) {
+        impressora.imprimir()
+
+        print("Execução finalizada")
+    }
+}
+
+object ProgramaTeste {
+    fun testarExecucaoFuncionando() {
+        val programa = ProgramaFactory.create()
+        val impressora = ImpressoraFactory.create()
+        programa.executar(impressora)
+
+        // Validar se a execução foi bem sucedida
+    }
+
+    fun testarExecucaoSemTinta() {
+        val programa = ProgramaFactory.create()
+        val impressoraSemTinta = ImpressoraFactory.create(false)
+        programa.executar(impressoraSemTinta)
+
+        // Validar se a execução falhou informando que estava sem tinta
+    }
+}
+*/
