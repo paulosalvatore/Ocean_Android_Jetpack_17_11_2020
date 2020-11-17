@@ -1,11 +1,33 @@
 package com.oceanbrasil.ocean_android_jetpack_17_11_2020
 
 import android.os.Bundle
+import android.os.SystemClock
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Conectar ambos
+        val viewModel =
+                ViewModelProvider(this, ChronometerViewModelFactory())
+                        .get(ChronometerViewModel::class.java)
+
+        if (viewModel.startTime == 0L) {
+            val elapsedRealtime = SystemClock.elapsedRealtime()
+            viewModel.startTime = elapsedRealtime
+        }
+
+        chronometer.base = viewModel.startTime
+        chronometer.start()
+    }
+
+    /*
+    // Exemplo com TextViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             textView.text = viewModel.text
         }
     }
+    */
 }
 
 /*
